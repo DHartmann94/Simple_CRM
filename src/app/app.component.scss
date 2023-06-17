@@ -7,14 +7,14 @@
 }
 
 .sidenav {
-    width: 300px;
+    width: 18.75rem;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    min-height: 56px;
-    padding: 0px 16px 0px 16px;
+    min-height: 3.5rem;
+    padding: 0rem 1rem 0rem 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -26,8 +26,8 @@
     li {
         display: flex;
         align-items: center;
-        height: 48px;
-        padding: 0px 16px 0px 16px;
+        height: 3rem;
+        padding: 0rem 1rem 0rem 1rem;
         cursor: pointer;
 
         &:focus {
@@ -39,12 +39,12 @@
         }
 
         mat-icon {
-            margin-right: 16px;
+            margin-right: 1rem;
         }
     }
 }
 
 mat-toolbar-row, mat-toolbar {
-    height: 56px;
-    min-height: 56px;
+    height: 3.5rem;
+    min-height: 3.5rem;
 }
