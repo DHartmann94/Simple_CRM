@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Firestore, collection, collectionData, setDoc, doc, getDoc, getDocs, addDoc, } from '@angular/fire/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -13,7 +14,7 @@ export class DialogAddUserComponent {
   loading: boolean = false;
 
 
-  constructor(private firestore: Firestore) { }
+  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
   async saveUser() {
     this.user.birthDate = this.birthDate.getTime();
@@ -23,6 +24,7 @@ export class DialogAddUserComponent {
     addDoc(usersCollection, this.user.toJSON()).then(async (result) => {
       await getDoc(result);
       this.loading = false;
+      this.dialogRef.close();
     });
   }
 
