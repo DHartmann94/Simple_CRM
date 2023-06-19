@@ -17,6 +17,14 @@
 
     <div class="input-parent">
         <mat-form-field class="full-width" appearance="outline">
+            <mat-label>E-Mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="E-Mail">
+            <!-- <mat-hint>Please enter your birth date</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div class="input-parent">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Birth Date</mat-label>
             <input [disabled]="loading" [(ngModel)]="birthDate" matInput placeholder="Birth Date" [matDatepicker]="picker1">
             <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -49,7 +57,7 @@
 
 </div>
 <div mat-dialog-actions>
-    <button [disabled]="loading" mat-button>Cancel</button>
+    <button [disabled]="loading" (click)="dialogRef.close()" mat-button>Cancel</button>
     <button [disabled]="loading" (click)="saveUser()" mat-button [mat-dialog-close]="" cdkFocusInitial>Save</button>
 </div>
 
