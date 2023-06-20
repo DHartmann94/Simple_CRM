@@ -22,6 +22,7 @@ export class UserComponent {
   /**
    * Retrieves user data from Firebase Firestore and onSnapshot() listens for real-time changes.
    * map; Converts the documents in the snapshot into an array of user objects.
+   * id: doc.id, ...doc.data(); Find the ID in the Firebase object using the spread operator.
    * allUsers = []; Updates the local variable with the new user data.
    */
   getUsersFromFirebase() {

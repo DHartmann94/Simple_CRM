@@ -1,0 +1,24 @@
+<section>
+    <mat-card class="user-detail-header">
+        <img src="assets/img/user.png" alt="User-Profile">
+
+        <div class="user-details">
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            <span>{{ user.email }}</span>
+        </div>
+    </mat-card>
+
+    <mat-card class="mt-2">
+        <button mat-icon-button class="pin-right-upper-corner" (click)="openAddressDialog()">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-card-header>
+            <mat-card-title>Address</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="address-content">
+            <span>{{ user.street }}</span>
+            <span>{{ user.zipCode }} {{ user.city }}</span>
+        </mat-card-content>
+
+    </mat-card>
+</section>

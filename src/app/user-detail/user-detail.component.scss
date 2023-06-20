@@ -1,0 +1,43 @@
+section {
+    padding: 1rem 3.5rem 0rem 3.5rem;
+}
+
+.user-detail-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    min-height: 15.63rem;
+    background-color: #7fb5b5;
+    color: white;
+
+    img {
+        height: 6.25rem;
+        width: 6.25rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 6.25rem;
+    margin-left: 2rem;
+
+    h2 {
+        margin-bottom: 0px;
+    }
+}
+
+.address-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.pin-right-upper-corner {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
