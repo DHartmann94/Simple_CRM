@@ -16,6 +16,12 @@ export class DialogAddUserComponent {
 
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
+  /**
+   * Saves the user data to Firestore.
+   * Converts the birthDate property to a Unix timestamp.
+   * Adds the user data to the 'users' collection as a new document.
+   * Retrieves the document snapshot of the newly added user document.
+   */
   async saveUser() {
     this.user.birthDate = this.birthDate.getTime();
     this.loading = true;

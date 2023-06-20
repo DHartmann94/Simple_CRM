@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Firestore, doc, onSnapshot } from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,7 +16,7 @@ export class UserDetailComponent {
   user: User = new User();
 
 
-  constructor(private firestore: Firestore, private route: ActivatedRoute) { }
+  constructor(private firestore: Firestore, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   /**
    * Subscribes to the route parameters and assigns the 'id' parameter to the userId property.
@@ -38,8 +41,12 @@ export class UserDetailComponent {
     });
   }
 
-  openAddressDialog() {
-    
+  editUserDetail() {
+    this.dialog.open(DialogEditUserComponent);
+  }
+
+  editAddress() {
+    this.dialog.open(DialogEditAddressComponent);
   }
 
 }
