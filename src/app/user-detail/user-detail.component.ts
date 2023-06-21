@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Firestore, doc, onSnapshot } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-a
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
-export class UserDetailComponent {
+export class UserDetailComponent implements OnInit {
   userId: string = '';
   user: User = new User();
 
@@ -41,12 +41,18 @@ export class UserDetailComponent {
     });
   }
 
+  /**
+   * Opens a dialog to edit user the user.
+   * The user object to be passed to the dialog component. (componentInstance)
+   */
   editUserDetail() {
-    this.dialog.open(DialogEditUserComponent);
+    const dialog = this.dialog.open(DialogEditUserComponent);
+    dialog.componentInstance.user = this.user;
   }
 
   editAddress() {
-    this.dialog.open(DialogEditAddressComponent);
+    const dialog = this.dialog.open(DialogEditAddressComponent);
+    dialog.componentInstance.user = this.user;
   }
 
 }
